@@ -1,9 +1,10 @@
 require 'blackjack'
 
 describe Blackjack do
-    # describe '#draw' do
-    #   it 'creates a single deck of playing cards' do
-    #       expect(deck.draw).to eq 
-    #   end
-    # end
+  describe '#player' do
+    it 'initializes a player' do
+      sam = "Sam"
+      expect(subject.player(sam)).to eq "Sam"
+    end
+  end
 end
