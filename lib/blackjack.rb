@@ -2,7 +2,7 @@ require_relative 'player.rb'
 require_relative 'deck.rb'
 
 class Blackjack
-    attr_reader :player, :player_hand, :dealer, :dealer_hand, :deck
+    attr_reader :player, :player_hand, :dealer, :dealer_hand, :deck, :score
 
     def initialize(dealer = Player.new, player = Player.new, deck = Deck.new)
       @player = player
@@ -10,7 +10,7 @@ class Blackjack
       @dealer = dealer
       @dealer_hand = []
       @deck = deck
-      @turn
+      @score = 0
     end 
 
     def start
@@ -25,9 +25,12 @@ class Blackjack
     end
 
     def score(hand)
-      score = 0
-      hand.each {|x| score += deck.value(x) }
-      score
+      hand.each {|x| @score += deck.value(x) }
+      @score
+    end
+
+    def victory?
+        true if @score == 21
     end
     
 end

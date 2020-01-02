@@ -21,4 +21,12 @@ describe Blackjack do
     end
   end
 
+  describe '#victory?' do
+      it 'checks if either player has blackjack (21)' do
+          hand = ["queen", "ace"]
+          subject.score(hand)
+          expect(subject.victory?).to be true
+      end
+  end
+
 end
