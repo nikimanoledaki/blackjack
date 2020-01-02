@@ -7,4 +7,12 @@ describe Blackjack do
       expect(subject.player(sam)).to eq "Sam"
     end
   end
+
+  describe '#start' do
+    it 'gives two cards from the deck to each' do
+      sam = "Sam"
+      subject.player(sam)
+      expect{ subject.start }.to change{ subject.player_hand }
+    end
+  end
 end

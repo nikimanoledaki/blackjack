@@ -28,6 +28,7 @@ Can you beat the dealer at 21?
 * if neither player has blackjack then Sam can start drawing cards from the top of the deck
 * Sam should stop drawing cards from the deck if their total reaches 17 or higher
 * Sam has lost the game if their total is higher than 21 
+
 * when Sam has stopped drawing cards the Dealer can start drawing cards from the top of the deck
 * the Dealer should stop drawing cards when their total is higher than Sam.
 * the Dealer has lost the game if their total is higher than 21 
