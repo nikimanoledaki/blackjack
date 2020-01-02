@@ -15,4 +15,11 @@ describe Blackjack do
       expect{ subject.start }.to change{ subject.player_hand }
     end
   end
+
+#   describe '#draw' do
+#     it 'adds a card to hand' do
+#       expect{ subject.draw }.to change{ subject.player_hand }
+#     end
+#   end
+
 end

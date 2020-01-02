@@ -12,4 +12,10 @@ describe Deck do
             expect(subject.random_card).to be_a(String)
         end
     end
+
+    describe '#values' do
+        it 'returns the score value of a card' do
+            expect(subject.value("two")).to eq 2
+        end
+    end
 end
