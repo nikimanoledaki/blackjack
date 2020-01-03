@@ -16,17 +16,30 @@ describe Blackjack do
 
   describe '#score' do
     it 'calculates the score' do
-        hand = ["four", "five"]
-        expect(subject.score(hand)).to eq 9
+      hand = ["four", "five"]
+      expect(subject.score(hand)).to eq 9
     end
   end
 
   describe '#victory?' do
-      it 'checks if either player has blackjack (21)' do
-          hand = ["queen", "ace"]
-          subject.score(hand)
-          expect(subject.victory?).to be true
-      end
+    it 'checks if either player has blackjack (21)' do
+      hand = ["queen", "ace"]
+      subject.score(hand)
+      expect(subject.victory?).to be true
+    end
   end
+
+  describe '#run_game' do
+    it 'starts game' do
+      expect{ subject.run_game }.to change{ subject.player_hand }
+    end
+
+    it 'calculates player hand' do
+      expect{ subject.run_game }.to change{ subject.total }
+    end
+  end
+
+    # it 'runs game and player loses when score is over 21' do
+    # end
 
 end
