@@ -2,40 +2,38 @@ require_relative 'player.rb'
 require_relative 'deck.rb'
 
 class Blackjack
-    attr_reader :player, :player_hand, :dealer, :dealer_hand, :deck, :total
+    attr_reader :player, :dealer, :deck
 
     def initialize(dealer = Player.new, player = Player.new, deck = Deck.new)
       @player = player
-      @player_hand = []
       @dealer = dealer
-      @dealer_hand = []
       @deck = deck
-      @total = 0
-    end 
-
-    def start
-      2.times { @player_hand << draw }
-      2.times { @dealer_hand << draw }
     end
 
-    def score(hand)
-      hand.each {|x| @total += deck.value(x) }
-      @total
+    def first_hand
+      2.times do 
+        @player.hand << draw
+        @dealer.hand << draw
+      end
     end
 
-    def victory?
-      true if @total == 21
+    def score(turn)
+      @turn.hand.each {|x| @turn.total += deck.value(x) }
+      @turn.total
+    end
+
+    def victory?(turn)
+      true if @turn.total == 21
     end
 
     def draw
       @deck.random_card
     end
 
-    def run_game
-      start
-      score(player_hand)
+    def run
+      first_hand
+      score(player)
       victory?
-      p @total
     end
 
 end

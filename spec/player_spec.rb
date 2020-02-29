@@ -1,10 +1,9 @@
 require 'player'
 
 describe Player do
-  # describe '#start' do
-  #   it 'gives two cards from the shuffled deck of cards' do
-  #     subject.start
-  #     expect(subject.hand).not_to be_empty
-  #   end
-  # end
+  describe 'initialize' do
+    it 'initializes with a hand' do
+      expect(subject.hand).to be_an(Array)
+    end
+  end
 end

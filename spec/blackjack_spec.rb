@@ -2,9 +2,9 @@ require 'blackjack'
 
 describe Blackjack do
 
-  describe '#start' do
+  describe '#first_hand' do
     it 'gives two cards from the deck to each' do
-      expect{ subject.start }.to change{ subject.player_hand }
+      expect{ subject.first_hand }.to change{ subject.player.hand }
     end
   end
 
@@ -16,8 +16,9 @@ describe Blackjack do
 
   describe '#score' do
     it 'calculates the score' do
-      hand = ["four", "five"]
-      expect(subject.score(hand)).to eq 9
+      subject.first_hand
+      player = Player.new
+      expect(subject.score(player)).to eq 9
     end
   end
 
@@ -29,13 +30,13 @@ describe Blackjack do
     end
   end
 
-  describe '#run_game' do
+  describe '#run' do
     it 'starts game' do
-      expect{ subject.run_game }.to change{ subject.player_hand }
+      expect{ subject.run }.to change{ subject.player.hand }
     end
 
     it 'calculates player hand' do
-      expect{ subject.run_game }.to change{ subject.total }
+      expect{ subject.run }.to change{ subject.player.total }
     end
   end
 
