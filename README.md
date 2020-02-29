@@ -1,26 +1,27 @@
 # Blackjack
 
-Can you beat the dealer at 21?
+Play Blackjack from your CLI. Can you beat the dealer at 21?
 ======================================
 
-#### Model the game
-* create a single deck of playing cards
-- class Deck
-  - initializes 
-    - random_card
-  - #random_card
-  - #card_values
-- class Blackjack 
-  -  #draw(card)
-    -  hand << card
-  -  #run_game
-  -  #score(hand)
-  -  hand = []
-- Sam
-- Dealer
+## Get started
+```
+$ git clone https://github.com/nikimanoledaki/blackjack.git 
+$ bundle install
+$ irb -r ./lib/blackjack.rb
+$ blackjack.first_hand
+```
 
-* two players (called Sam and the Dealer) who will play against each other
-* each player is given two cards from the top of a shuffled deck of cards
+## How to test
+```
+$ rspec
+```
+
+## Structure
+* The Deck class creates a single deck of playing cards. 
+
+* Two players (called Sam and the Dealer) play against each other
+
+* Each player is given two cards from the top of a shuffled deck of cards.
 
 #### Rules to implement
 * determine score of a hand[1]
